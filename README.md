@@ -2,7 +2,7 @@
 The code is for calculating angular velocity of motor by data of encoder A B signal.
 The code utilize interrupt pin to collect A B signal of encoder.
 This code have been tested on NUCLEO-F091RC. 
-The code develop based ob mbed libs.
+The code develop based on mbed libs.
 
 ########################## Example #################################
 ```
