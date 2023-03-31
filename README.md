@@ -5,12 +5,10 @@ This code have been tested on NUCLEO-F091RC.
 The code develop based ob mbed libs.
 
 ########################## Example #################################
-
+```
 #include "mbed.h"
 #include "RotaryEncoder.hpp"
-
 using namespace std::chrono;
-
 RotaryEncoder enc(D6, D7);
 
 int main() {
@@ -22,5 +20,5 @@ int main() {
         ThisThread::sleep_for(1ms);
     }
 }
-
-#############################################################################
+```
+####################################################################
