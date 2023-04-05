@@ -3,6 +3,7 @@ The code is for calculating angular velocity of motor by data of encoder A B sig
 The code utilize interrupt pin to collect A B signal of encoder.
 This code have been tested on NUCLEO-F091RC. 
 The code develop based on mbed libs.
+mbed project: https://os.mbed.com/users/6f953f6d-adb0-4afd-b254-05004248a722/code/NUCLEO-F091RC-PIDMotorControl/
 
 ########################## Example #################################
 ```
