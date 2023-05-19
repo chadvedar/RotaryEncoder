@@ -18,6 +18,9 @@
 #include "RotaryEncoder.hpp"
 
 bool RotaryEncoder::init(){
+    this->clk = 0;
+    this->dir = 1;
+    this->encoder_pulse = 0;
 
     CLK.rise(callback(this, &RotaryEncoder::set_clk_high));
     CLK.fall(callback(this, &RotaryEncoder::set_clk_low));
@@ -27,7 +30,7 @@ bool RotaryEncoder::init(){
 }
 
 void RotaryEncoder::start(){
-    timer_motor_speed.attach(callback(this, &RotaryEncoder::calculate_speed), 20000us);
+    timer_motor_speed.attach(callback(this, &RotaryEncoder::calculate_speed), 0.02);
 }
 
 void RotaryEncoder::set_clk_high(){
@@ -45,6 +48,6 @@ void RotaryEncoder::encoder_callback(){
 }
 
 void RotaryEncoder::calculate_speed(){
-    rpm = dir *encoder_pulse* encoder_resolution * 1000000.0 / 20000 * 60.0;
+    rpm = dir *encoder_pulse* encoder_resolution * 60.0 / 0.02;
     encoder_pulse = 0;
 }
